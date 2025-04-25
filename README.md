@@ -58,4 +58,5 @@ All features were developed and tested locally in **VS Code**, ensuring the pipe
 - **Visual Studio Code** 💻  
 
 
+<img width="1104" alt="Screenshot 2025-04-25 at 14 39 19" src="https://github.com/user-attachments/assets/cf2c40ba-b29e-49fa-b1be-0188da4c9b76" />
 
