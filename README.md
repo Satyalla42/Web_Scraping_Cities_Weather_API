@@ -1,42 +1,61 @@
-# 🌍 City Data Web Scraping Weather API Project
-This project involves building a weather data acquisition system using web scraping, API integration, and SQL to store and analyze weather data for various cities. The system was developed locally in Visual Studio Code and later deployed to Google Cloud for scalability.
+# 🌍 City Data Web Scraping, Weather & Flight Arrival API Project
+
+This project involves building a **weather and flight data acquisition pipeline** using **web scraping**, **API integration** (OpenWeatherMap & AeroDataBox), and **MySQL** to store and analyze data for various cities. Developed locally in **Visual Studio Code** and deployed to **Google Cloud** for scalability.
+
+---
 
 ## 🚀 Project Overview
-The goal of this project was to create a pipeline that:
 
-Scrapes city data 🌆
+The goal of this project was to create a full data pipeline that:
 
-Retrieves weather information ☀️🌧️ through an API
+- ✅ **Scrapes city data** (name, coordinates, population) from an online source using BeautifulSoup 🕷️  
+- ✅ **Transforms and stores** the data into a **Pandas DataFrame**, splits it for batch processing, and **uploads to MySQL** directly from VS Code 📊🗄️  
+- ✅ **Retrieves weather info** ☀️🌧️ using the **OpenWeatherMap API**, by looping through the cities scraped earlier  
+- ✅ **Fetches flight arrival data** using the **AeroDataBox API**, utilizing the same city data  
+- ✅ **Filters and selects relevant columns** from API JSON responses for efficient storage and querying  
+- ✅ **Deploys the solution** to **Google Cloud Platform (GCP)** using Cloud SQL & Compute Engine for production use 🌥️
 
-Stores the results in a MySQL database 🗄️
-
-Deploys the entire solution to Google Cloud ☁️ for scalability and accessibility.
+---
 
 ## 🔑 Key Features
-Web Scraping 🕷️: Scraped city information (e.g., city name, coordinates, population) from an online source and stored it in a Pandas DataFrame 📊.
 
-API Integration 🌐: Integrated the OpenWeatherMap API to fetch real-time weather data for cities based on the scraped data. The API provides data on temperature 🌡️, humidity 💧, and weather conditions ☁️.
+### 🕷️ Web Scraping  
+Collected detailed **city information** (e.g., name, latitude/longitude, population) and structured it into a **Pandas DataFrame**. The data was then **split** and **uploaded to a MySQL database**.
 
-Data Storage 💾: Set up a MySQL database to store the scraped city information and weather data for easy querying and analysis.
+### 🌐 API Integration  
+- Used **OpenWeatherMap API** to fetch real-time **weather data** (temperature 🌡️, humidity 💧, condition ☁️) by dynamically inserting the city name and coordinates.  
+- Integrated **AeroDataBox API** to retrieve **flight arrival information** for the same cities.  
+- Carefully **selected key fields** from both JSON responses to store only relevant and clean data.
 
-Automated Function 🤖: Created a Python function that automates the process of fetching, transforming, and storing data. It handles city data collection, API calls, and stores the information in the SQL database.
+### 💾 Data Storage  
+Set up a **MySQL** database to hold both the **city metadata** and the **API responses** for later querying and analysis.
 
-Local Development 💻: Developed and tested the system locally using Visual Studio Code (VS Code), ensuring that the entire pipeline worked seamlessly before deploying it to the cloud.
+### 🤖 Automation & Transformation  
+Wrote Python functions to automate:
+- City data extraction  
+- API requests with personal API keys  
+- Data transformation and filtering  
+- MySQL inserts
 
-Cloud Deployment 🌥️: Deployed the project to Google Cloud for production use, leveraging services like Cloud SQL and Compute Engine for efficient data storage and application execution.
+### 💻 Local Development  
+All features were developed and tested locally in **VS Code**, ensuring the pipeline was stable before cloud deployment.
+
+### ☁️ Google Cloud Deployment  
+- Deployed using **Compute Engine** and **Cloud SQL**  
+- Designed to scale and be accessible for live data analysis and future integrations
+
+---
 
 ## 🛠️ Technologies Used
-Python 🐍
 
-Pandas 📊
+- **Python** 🐍  
+- **Pandas** 📊  
+- **BeautifulSoup** 🕸️  
+- **OpenWeatherMap API** 🌍  
+- **AeroDataBox API** ✈️  
+- **MySQL** 🗃️  
+- **Google Cloud Platform (GCP)** ☁️  
+- **Visual Studio Code** 💻  
 
-BeautifulSoup 🕸️ (for web scraping)
 
-OpenWeatherMap API 🌍
-
-MySQL 🗃️
-
-Google Cloud ☁️
-
-Visual Studio Code 💻
 
